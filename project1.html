@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Internal Blockchain Research App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="home-link" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </a>
+            <h1 class="logo">Voxmi's Vision and Projects (Updated Weekly)</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="project-detail">
+            <h2>Internal Blockchain Research App</h2>
+            <p class="project-summary">
+                Building a secure, in-house blockchain application for a non-profit research entity to decentralize research data, streamline collaboration, and ensure data integrity through a robust, transparent system.
+            </p>
+
+            <h3>Core Architectural Principles</h3>
+            <div class="project-info-section">
+                <p>
+                    <strong>API-First Approach:</strong> The entire platform will be built using a strict API-first methodology. This ensures all functionalities are exposed through a well-documented, secure, and robust API, providing the foundational flexibility required for future growth, integration, and consumption by both web and mobile applications.
+                </p>
+                <p>
+                    <strong>Scalability & Multi-Tenancy:</strong> The architecture is designed for future scalability. It will support the seamless onboarding of multiple research organizations, allowing each to create and manage their own utility tokens for internal incentives. Voxmi will maintain the secure infrastructure, ensuring data integrity and separation for each entity.
+                </p>
+            </div>
+
+            <h3>User Flow of Deliverables</h3>
+            <div class="deliverables">
+                <div class="deliverable-card">
+                    <h4>Deliverable 1: Blockchain-Based Digital Identity & Login</h4>
+                    <ul>
+                        <li>Admins create unique, tamper-proof identities for each member on the blockchain.</li>
+                        <li>Students log in securely using their existing blockchain wallet (e.g., via WalletConnect).</li>
+                        <li>The system verifies wallet ownership against the recorded address in the IdentityContract.</li>
+                        <li>All login attempts are time-stamped and stored immutably on the blockchain for a verifiable audit trail.</li>
+                    </ul>
+                </div>
+                <div class="deliverable-card">
+                    <h4>Deliverable 2: Contribution Tracking & Rewards</h4>
+                    <ul>
+                        <li>Members can submit research documents, images, and notes, which are logged on-chain.</li>
+                        <li>Submissions are assigned a unique hash for authenticity verification.</li>
+                        <li>Administrators review submissions, provide feedback, and approve token-based rewards.</li>
+                    </ul>
+                </div>
+                <div class="deliverable-card">
+                    <h4>Deliverable 3: Token-Based Reward Distribution</h4>
+                    <ul>
+                        <li>A proprietary utility token (ERC-20) is issued for contributions and participation.</li>
+                        <li>Smart contracts automate reward distribution for fairness and efficiency.</li>
+                        <li>NFT-based certificates (ERC-721) are awarded for achievements and milestones.</li>
+                        <li>Gamification elements like leaderboards and token-based DAO governance boost engagement.</li>
+                    </ul>
+                </div>
+                <div class="deliverable-card">
+                    <h4>Deliverable 4: Administrator Web Panel</h4>
+                    <ul>
+                        <li>A comprehensive dashboard for managing users, contributions, and token analytics.</li>
+                        <li>Modules for issuing credentials, managing submissions, and issuing NFT certificates.</li>
+                        <li>Tools for overseeing DAO governance proposals and cycles.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="tech-stack-section">Proposed Tech Stack</h3>
+            <div class="tech-grid">
+                <div class="tech-card"><strong>Blockchain:</strong> Ethereum / Polygon</div>
+                <div class="tech-card"><strong>Smart Contracts:</strong> Solidity + Hardhat</div>
+                <div class="tech-card"><strong>Storage:</strong> IPFS / Pinata</div>
+                <div class="tech-card"><strong>Web Backend:</strong> Node.js / Python</div>
+                <div class="tech-card"><strong>Web Frontend:</strong> React, ShadCN</div>
+                <div class="tech-card"><strong>Database:</strong> MongoDB / MySQL</div>
+                <div class="tech-card"><strong>Tokens:</strong> ERC-20, ERC-721</div>
+                <div class="tech-card"><strong>AI (Prototype):</strong> Python</div>
+            </div>
+
+            <h3>Key Questions</h3>
+            <div class="project-info-section">
+                <p>
+                    <strong>What Blockchain network shall be used to keep the gas fee less as well as provide a strong base in security, speed and liquidity?</strong>
+                </p>
+                <p>
+                    This is a critical consideration. While Ethereum offers unparalleled security and liquidity, its gas fees can be high. Polygon (as a Layer 2 solution) presents a strong alternative, offering lower transaction costs and high speed while still benefiting from Ethereum's security. The final decision will depend on the specific needs for transaction finality and the operational budget of the non-profit.
+                </p>
+            </div>
+
+            <h3>Additional Information</h3>
+            <div class="project-info-section">
+                 <p><strong>Code & Knowledge Handover:</strong> Basic documentation and a walkthrough will be provided for school representatives.</p>
+                 <p><strong>Wireframing:</strong> Will be done using AI tools with a direct export to Figma.</p>
+                 <p><strong>Quality Assurance:</strong> Manual and automated testing will be conducted to ensure platform stability.</p>
+            </div>
+
+            <a href="index.html" class="back-link">Back to Projects</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 All rights reserved to voxmi.io</p>
+        </div>
+    </footer>
+    <script src="security.js"></script>
+</body>
+</html> 

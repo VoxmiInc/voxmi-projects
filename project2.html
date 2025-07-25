@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: LocalMind - Your On-Device AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="home-link" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </a>
+            <h1 class="logo">Voxmi's Vision and Projects (Updated Weekly)</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="project-detail">
+            <h2>LocalMind: Your On-Device AI Assistant</h2>
+            <p class="project-summary">
+                A privacy-first mobile application offering a powerful Retrieval-Augmented Generation (RAG) AI experience that runs entirely on the user's device. LocalMind ensures absolute privacy and offline capability, powered by a dynamic library of user-selected generative models from Hugging Face.
+            </p>
+
+            <div class="feature-highlight">
+                <h4>New: Dynamic On-Device Model Library</h4>
+                <p>Empowering users to take full control of their AI experience, LocalMind will feature direct integration with Hugging Face. Users can browse, download, and seamlessly switch between various quantized GGUF models, tailoring the app's performance and capabilities to their specific needs. This turns LocalMind into a versatile platform for local AI experimentation, similar in spirit to the pioneering <a href="https://medium.com/@cognidownunder/google-ai-edge-gallery-bringing-powerful-ai-to-your-pocket-no-internet-required-8043668eb126" target="_blank">Google AI Edge Gallery</a>.</p>
+            </div>
+
+            <h3>Core Concept & Objective</h3>
+            <div class="project-info-section">
+                <p>The primary objective is to develop a mobile application that provides accurate, context-aware, and privacy-preserving AI assistance through local computation. Users will interact with an intelligent assistant without their data ever leaving their device or relying on a remote server, fostering a new level of trust and data sovereignty.</p>
+            </div>
+
+            <h3>Key Value Propositions</h3>
+            <div class="deliverables">
+                <div class="deliverable-card">
+                    <ul>
+                        <li><strong>Total Privacy:</strong> All conversations and user data are processed and stored locally. No data is sent to the cloud, ensuring sensitive information remains 100% private.</li>
+                        <li><strong>Full Offline Capability:</strong> The app is fully functional without an internet connection, making it a reliable tool for professionals and users on the go.</li>
+                        <li><strong>Unmatched Responsiveness:</strong> By eliminating network latency, local inference provides an exceptionally fast and fluid user experience.</li>
+                        <li><strong>Complete Data Sovereignty:</strong> Users retain absolute control and ownership of their data and knowledge base, with clear options for management and deletion.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Detailed Technical Architecture</h3>
+            <div class="project-info-section">
+                <h4>Frontend (Mobile Application)</h4>
+                <p>The user interface will be built using <strong>React Native</strong>, specifically leveraging the <code>LLaMA.RN</code> framework. This provides a direct bridge to the underlying <code>llama.cpp</code> inference engine. While the primary focus is <strong>Android</strong>, this choice allows for future expansion to iOS.</p>
+            </div>
+            <div class="project-info-section">
+                <h4>Local Inference Engine</h4>
+                <p>The core of the app is <strong><code>llama.cpp</code></strong>, a highly optimized C++ implementation for running LLM inference on CPUs. We will use heavily quantized versions of models like <code>mistral-7b</code> or <code>llama-2-7b</code> in the efficient GGUF format to ensure performance on mobile hardware.</p>
+            </div>
+            <div class="project-info-section">
+                <h4>Data Management & RAG Component</h4>
+                <p>This is the most significant technical challenge. Since <code>llama.cpp</code> does not inherently handle knowledge base indexing, a dedicated local service is required. This service will be responsible for processing user-provided documents (PDF, TXT), creating vector embeddings, and storing them for fast retrieval.</p>
+                <p><strong>Key Decision:</strong> A choice must be made between integrating a lightweight, embeddable vector database like <strong>Qdrant</strong> or <strong>Milvus Lite</strong>, versus building a simpler custom indexer using SQLite or RocksDB. The former offers more power and scalability, while the latter could be faster to implement for an MVP.</p>
+            </div>
+
+            <h3>Proposed Architecture Flow</h3>
+            <div class="architecture-flow">
+                <div class="flow-step">
+                    <h5>1. User Interaction (Frontend)</h5>
+                    <p>User enters a query. The React Native UI captures the input and forwards it to the LocalMind Service running in the background.</p>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <h5>2. RAG Retrieval (LocalMind Service)</h5>
+                    <p>If the RAG feature is enabled, the service queries the local vector database (e.g., Qdrant) with the user's input to find the most relevant text chunks from the user's knowledge base.</p>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <h5>3. Prompt Formatting (LocalMind Service)</h5>
+                    <p>The service constructs a detailed prompt by combining the original query with the retrieved context passages, preparing it for the LLM.</p>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <h5>4. Inference (LLaMA.cpp Engine)</h5>
+                    <p>The formatted prompt is passed to <code>llama.cpp</code>. The engine processes the prompt through the on-device model and generates a coherent, context-aware response.</p>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <h5>5. Display Response (Frontend)</h5>
+                    <p>The generated text is sent back to the React Native UI and displayed to the user, completing the loop.</p>
+                </div>
+            </div>
+
+            <h3>Implementation Plan & Next Steps</h3>
+            <div class="project-info-section">
+                <ol>
+                    <li><strong>Model Library Integration:</strong> Prioritize the development of a user-facing model manager with direct access to the Hugging Face Hub. This includes functionality to browse, download, and manage different quantized GGUF models on the device.</li>
+                    <li><strong>Core Functionality POC:</strong> Develop a proof-of-concept focusing on the React Native to <code>llama.cpp</code> pipeline, ensuring it can dynamically load and run different user-selected models.</li>
+                    <li><strong>Corpus Indexer Decision:</strong> Formally evaluate and select the technology for the local RAG indexing service (e.g., Qdrant vs. custom build).</li>
+                    <li><strong>Feature Development:</strong> Build out the primary features, including the chat UI, knowledge base import functionality, and the RAG toggle.</li>
+                    <li><strong>Legal and Privacy Polish:</strong> Formalize the privacy policy and ensure all data handling practices are transparent and compliant with regulations like GDPR/CCPA.</li>
+                </ol>
+            </div>
+
+            <a href="index.html" class="back-link">Back to Projects</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 All rights reserved to voxmi.io</p>
+        </div>
+    </footer>
+    <script src="security.js"></script>
+</body>
+</html> 

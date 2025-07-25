@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: AresEd - On-Device AI for Education</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="home-link" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </a>
+            <h1 class="logo">Voxmi's Vision and Projects (Updated Weekly)</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="project-detail">
+            <h2>AresEd: Your On-Device AI Tutor for STEM</h2>
+            <p class="project-summary">
+                AresEd is a groundbreaking educational platform designed to function as a dedicated AI tutor for every student. It's built from the ground up to ensure absolute privacy and full offline functionality through on-device processing. For those seeking maximum power, it also offers an optional mode to connect to leading cloud-based AI models, creating a truly hybrid and flexible learning experience.
+            </p>
+
+            <div class="feature-highlight">
+                <h4>New: The Interactive Virtual Lab</h4>
+                <p>AresEd transforms abstract theory into tangible, interactive practice. Our Virtual Lab, powered by Amica's vision capabilities and a custom 3D engine, allows students to conduct complex experiments in a safe, repeatable, and engaging environment. They can visualize the invisible, such as the magnetic field lines around a current-carrying wire, simulate complex biological processes like protein folding, or even perform a virtual frog dissection without any ethical or resource constraints. This hands-on approach is designed to spark curiosity and build an intuitive, lasting understanding of scientific principles.</p>
+            </div>
+            
+            <div class="project-image-container">
+                <img src="images/amica-demo.png" alt="Amica Interface Demo" class="project-image">
+            </div>
+
+            <h3>Core Concept & Objective</h3>
+            <div class="project-info-section">
+                <p>The primary objective is to create a suite of domain-specific AI tutors that operate entirely on the user's device, safeguarding student privacy. By fine-tuning compact vision-language models on curated academic curricula, we are moving beyond simple Q&A. AresEd employs a Socratic pedagogical approach; the AI tutor asks probing questions, encourages students to form their own hypotheses, and guides them through the process of discovery. The goal is to cultivate genuine critical-thinking skills and a deep, intuitive grasp of subject matter through interactive experimentation and guided inquiry.
+                </p>
+            </div>
+
+            <h3>Why We Are Building This</h3>
+            <div class="project-info-section">
+                <p>
+                    The global education landscape is marked by profound disparities. According to UNESCO, approximately <strong>244 million children and youth are out of school globally</strong>, and in many low-income regions, over half of the children experience "learning poverty," unable to read and comprehend a simple text by age 10. The gap is not just about access but also about quality. A significant shortage of qualified teachers—with a projected global shortfall of nearly <strong>69 million by 2030</strong>—and a lack of adequate resources mean that even children who attend school are often left behind. This is where AresEd comes in.
+                </p>
+                <p>
+                    Our mission with AresEd is to <strong>democratize AI-powered education</strong>, breaking down the barriers of cost, geography, and infrastructure that perpetuate this cycle of inequality. We believe that every child, whether in a bustling metropolis or a remote village, deserves access to a world-class, personalized learning experience.
+                </p>
+                <p>
+                    By integrating with the <strong>Amica</strong> platform, we transform learning from a passive activity into an engaging, interactive journey. The platform brings lively 3D characters and hands-on virtual experiments directly into the classroom, sparking curiosity in a way that traditional textbooks cannot. Our deployment strategy focuses on installing <strong>two self-contained AI kiosks in every classroom</strong> of our partner schools. These kiosks run fully offline with locally hosted models, which ensures:
+                </p>
+                <ul>
+                    <li><strong>Zero Ongoing Cost:</strong> Schools face no recurring fees for software or access once the kiosks are deployed.</li>
+                    <li><strong>No Internet Required:</strong> This is critical for rural and remote areas where connectivity is unreliable or non-existent.</li>
+                    <li><strong>Equitable Opportunities:</strong> We are leveling the playing field, ensuring students from all economic backgrounds have the same tools to succeed.</li>
+                </ul>
+                <p>
+                    Ultimately, AresEd is about more than just technology; it's about empowerment. It's about <em>sending AI to every kid</em>, turning every classroom into a hub of exploration where students can ask limitless questions, run complex simulations, and receive instant, personalized guidance. Whether a student dreams of becoming a physicist or simply needs help understanding a biology diagram, AresEd will be there as their dedicated AI tutor.
+                </p>
+            </div>
+
+
+            <h3>Key Value Propositions</h3>
+            <div class="deliverables">
+                <div class="deliverable-card">
+                    <ul>
+                        <li><strong>Total Privacy & Safety:</strong> In an era of data breaches, protecting student information is paramount. By processing all data on-device by default, we eliminate the risks associated with cloud-based services, building trust with parents and institutions.</li>
+                        <li><strong>Flexible & Powerful:</strong> Operates fully offline for complete privacy and accessibility, with an optional mode to connect to powerful cloud-based AI models for deeper, more nuanced responses when an internet connection is available.</li>
+                        <li><strong>Interactive & Immersive Learning:</strong> We counter passive learning by engaging students directly. Instead of watching a video, they can manipulate variables in an experiment. This active participation dramatically increases engagement, retention, and conceptual understanding.</li>
+                        <li><strong>Curriculum-Aligned Expertise:</strong> Our AI tutors are not generic chatbots. We work directly with educators to fine-tune each model on specific, curriculum-aligned materials (like OpenStax textbooks), ensuring the guidance is accurate, relevant, and reinforces classroom teaching.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Detailed Technical Architecture</h3>
+            <div class="project-info-section">
+                <h4>Frontend (Amica Interface)</h4>
+                <p>The user experience is powered by the <strong>Amica</strong> framework, an open-source platform for building interactive 3D characters with voice synthesis and speech recognition. We extend its capabilities to create a dedicated "Virtual Lab" environment. This involves leveraging <code>@pixiv/three-vrm</code> for the 3D avatar, but also integrating custom UI components built with React for controlling experiments (e.g., sliders for force, toggles for circuit elements). For displaying complex equations and formulas generated by the AI, we will integrate a lightweight library like <strong>KaTeX</strong> for fast, accessible mathematical rendering.</p>
+                <p>The Amica project is open-source and can be found on GitHub: <a href="https://github.com/semperai/amica" target="_blank">https://github.com/semperai/amica</a></p>
+            </div>
+            <div class="project-info-section">
+                <h4>Local Inference Engine & Models</h4>
+                <p>The core intelligence of AresEd runs on a highly optimized stack. For natural language, we use <strong><code>llama.cpp</code></strong> to run 4-bit quantized GGUF models (like <code>Llama-3-8B-Q4_K_M</code>), which provides an ideal balance of performance and accuracy on CPU/mobile hardware. This is the default, fully offline mode. The vision component uses specialized, lightweight models trained for specific educational tasks, such as interpreting diagrams or rendering simulations, ensuring real-time interactivity.</p>
+            </div>
+            <div class="project-info-section">
+                <h4>Optional Cloud-Based Inference</h4>
+                <p>For users with internet access who require the most powerful AI capabilities, AresEd includes an optional mode to connect to external model APIs. Through a simple configuration, users can route their queries to leading platforms like <strong>OpenAI, Anthropic, or through an OpenRouter integration</strong>. This hybrid approach ensures that the base experience is always available offline, while allowing for state-of-the-art performance when connectivity permits, giving users ultimate control over their data and performance trade-offs.</p>
+            </div>
+            <div class="project-info-section">
+                <h4>Subject-Specific Knowledge Base (RAG)</h4>
+                <p>Each AI tutor's expertise comes from a local RAG pipeline. The process is fully self-contained: curriculum documents (PDFs, EPUBs) are parsed and chunked; a lightweight, on-device sentence-transformer model generates vector embeddings; and both are stored in a local <strong>Qdrant</strong> vector database instance. Qdrant is chosen for its low memory footprint and efficient on-disk storage, making it perfect for resource-constrained devices.</p>
+            </div>
+
+            <div class="project-info-section">
+                <h4>Live Vision Assistance (Camera AI)</h4>
+                <p>To bridge the gap between digital content and the physical world, AresEd will incorporate a live vision assistance feature. This allows students to turn on their device's camera and get real-time help with their physical learning materials. Whether it's a complex diagram in a textbook, a handwritten math problem, or even a simple at-home science experiment, students can simply point their camera, ask a question, and receive context-aware guidance.</p>
+                <p>This is powered by a lightweight, on-device vision model (e.g., an optimized MobileViT or a similar architecture) that performs real-time analysis of the camera feed. The model can execute tasks like Optical Character Recognition (OCR) to read text and equations, and object/diagram recognition to identify key concepts. The extracted information is then fed directly into our RAG and LLM pipeline to generate a relevant, helpful response, truly connecting the student's physical environment with their digital tutor.</p>
+            </div>
+
+            <h3>Proposed Architecture Flow</h3>
+            <div class="architecture-flow">
+                <div class="flow-step">
+                    <h5>1. User Interaction (Amica Frontend)</h5>
+                    <p>A student asks, "How does increasing the mass affect acceleration if the force is constant?"</p>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <h5>2. Context Retrieval (Local RAG Service)</h5>
+                    <p>The query is vectorized. Qdrant performs a similarity search on the local Physics knowledge base and retrieves the text chunk explaining Newton's Second Law (F=ma). This context is used for both local and cloud models.</p>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <h5>3. Inference Routing (Local vs. Cloud)</h5>
+                    <p>The system checks if a cloud API key is configured. If yes, the query and context are sent to the external API. If no, they are processed by the local <strong><code>llama.cpp</code></strong> engine.</p>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <h5>4. Multimodal Generation</h5>
+                    <p>The chosen engine (local or cloud) generates the textual explanation. The frontend intercepts any visualization commands from the response and the <code>three.js</code> engine renders the corresponding experiment.</p>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <h5>5. Display Response (Amica Frontend)</h5>
+                    <p>The Amica interface displays the tutor's textual explanation alongside the interactive simulation, allowing the student to see the principle in action and explore it further.</p>
+                </div>
+            </div>
+
+            <h3>Implementation Plan & Next Steps</h3>
+            <div class="project-info-section">
+                <ol>
+                    <li><strong>Framework Integration:</strong> Define a robust plugin API within Amica to allow for modular and hot-swappable educational subjects. This will enable us to easily add new tutors like "Chemistry" or "Calculus" in the future.</li>
+                    <li><strong>Physics Tutor POC:</strong> Develop the initial proof-of-concept focusing on three core Newtonian mechanics simulations. The RAG pipeline for this POC will be indexed with the first three chapters of the OpenStax College Physics textbook.</li>
+                    <li><strong>Corpus Curation & Automation:</strong> Build automated scripts to ingest and process open-source educational materials. This includes extracting clean text from LaTeX in textbooks and chunking it logically for optimal RAG performance.</li>
+                    <li><strong>Efficient Model Fine-Tuning:</strong> Utilize LoRA (Low-Rank Adaptation) for fine-tuning our base language models. This technique dramatically reduces the computational resources required and allows us to create specialized "adapter" models for each subject.</li>
+                    <li><strong>UI/UX and User Testing:</strong> Conduct formal user testing sessions with a focus group of middle and high school students. The feedback will be crucial for refining the virtual lab controls to ensure they are intuitive, engaging, and educationally effective.</li>
+                </ol>
+            </div>
+
+            <h3>Initial Business Plan</h3>
+            <div class="project-info-section">
+                <p>
+                    The foundational concepts and strategic direction of Project AresEd are built upon an initial business plan that outlines our market analysis, social impact goals, and deployment strategy. This document provides further insight into our vision for revolutionizing education through accessible AI.
+                </p>
+                <a href="pdfs/AresEd-BP.pdf" target="_blank" class="button">Download Business Plan</a>
+            </div>
+
+            <a href="index.html" class="back-link">Back to Pipeline</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 All rights reserved to voxmi.io</p>
+        </div>
+    </footer>
+    <script src="security.js"></script>
+</body>
+</html> 
